@@ -5,7 +5,7 @@ import re
 # create a regular expression object that we'll use later
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
-DATABASE = 'users'
+DATABASE = 'ecommerce'
 
 class User:
     def __init__(self, data) -> None:

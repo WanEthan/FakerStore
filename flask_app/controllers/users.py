@@ -3,14 +3,14 @@ from flask_app.models.user import User
 
 
 @app.route('/')
-def sign_up():
+def register_page():
     return render_template("index.html")
 
 @app.route('/signin')
-def sign_in():
+def sign_in_page():
     return render_template("signin.html")
 
-# ***------------------------ CREATE (SIGN-UP) --------------------------***
+# ***------------------------ CREATE (Register) --------------------------***
 
 @app.route("/register", methods=['post'])
 def register():

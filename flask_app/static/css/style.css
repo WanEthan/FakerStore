@@ -11,10 +11,9 @@
 }
 
 .valid_message {
-    background-color: rgb(247, 183, 183);
     color: rgb(152, 0, 0);
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 label {
