@@ -1,0 +1,36 @@
+* {
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    border: 0 none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.valid_message {
+    background-color: rgb(247, 183, 183);
+    color: rgb(152, 0, 0);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.login,
+.register {
+    border: 5px outset;
+    border-radius: 12px;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+.padding {
+    padding: 1%;
+}
