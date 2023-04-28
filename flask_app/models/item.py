@@ -35,6 +35,13 @@ class Item:
             items.append(Item(item_dict))
         return items
     
+    # ***------------------------Read ONE ITEM from Database--------------------------***
+    @classmethod
+    def get_one(cls, data):
+        query = "SELECT * FROM items WHERE id = %(id)s;"
+        results = connectToMySQL(DATABASE).query_db(query, data)
+        return results
+    
     @property
     def get_total(self):
         total = self.price * self.quanitity

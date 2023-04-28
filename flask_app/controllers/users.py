@@ -61,7 +61,7 @@ def login():
     session['first_name'] = user_in_db.first_name
     session['last_name'] = user_in_db.last_name
     # never render on a post!!!
-    return redirect("/dashboard")
+    return redirect("/store")
 
 # ***------------------------ LogOut --------------------------***
 

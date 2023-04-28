@@ -5,11 +5,11 @@ from flask_app.models.order import Order
 from pprint import pprint
 
 
-@app.route("/dashboard")
-def dashbaord():
-    if 'user_id' in session:
-        return render_template('dashboard.html')
-    return redirect('/')
+# @app.route("/dashboard")
+# def dashbaord():
+#     if 'user_id' in session:
+#         return render_template('dashboard.html')
+#     return redirect('/')
 
 
 @app.route("/store")
@@ -23,6 +23,15 @@ def store():
             data = { 'user_id': session['user_id'], 'status': 'process'}
             session['order_id'] = Order.add(data)
         return render_template('store.html', data=data)
+    return redirect('/signin')
+
+@app.route("/iteminfo/<int:id>")
+def item_info(id):
+    if 'user_id' in session:
+        id_dict = {'id': id}
+        data = Item.get_one(id_dict)
+        print(data)
+        return render_template('iteminfo.html', data=data)
     return redirect('/signin')
 
 
