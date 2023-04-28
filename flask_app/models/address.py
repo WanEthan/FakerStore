@@ -4,7 +4,8 @@ import re
 
 DATABASE = 'ecommerce'
 
-class Item:
+
+class Address:
     def __init__(self, data) -> None:
         self.id = data['id']
         self.address = data['address']

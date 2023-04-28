@@ -104,14 +104,24 @@
                     <hr>
                     <h3>Order Summary</h3>
                     <hr>
+                    {% for product in data.order_items %}
                     <div class="row padding">
-                        <div class="col-lg-5"><img src="" alt=""></div>
-                        <div class="col-lg-3">Product1</div>
-                        <div class="col-lg-2">$1000</div>
-                        <div class="col-lg-2">quantity</div>
+                        <div class="col-lg-3 d-flex justify-content-center">
+                            <img src="{{ product.image }}" style="width: 30%;">
+                        </div>
+                        <div class="col-lg-3">{{ product.name }} </div>
+                        <div class="col-lg-2">{{ product.price }}</div>
+                        <div class="col-lg-2">
+                            <i class="fa-solid fa-minus"></i>
+                            <p class="quanitity" style="display: inline-block;">{{ product.quanitity }}</p>
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                        <div class="col-lg-2">${{ product.get_total }}</div>
                     </div>
-                    <h5>Items: </h5>
-                    <h5>Total: </h5>
+                    <hr>
+                    {% endfor %}
+                    <h5>Items: {{ data.get_cart_items }}</h5>
+                    <h5>Total: ${{ data.get_cart_total }}</h5>
                 </div>
 
             </div>

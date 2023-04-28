@@ -45,54 +45,21 @@
     <!-- ***---------------------- ITEMS SECTION -----------------------*** -->
     <div class="container-fluid padding ">
         <div class="row padding">
-            <div class="col-sm-12 col-md-3 col-lg-4">
-                <div class="card mx-auto">
-                    <img src="..." class="card-img-top" alt="...">
+            {% for product in data %}
+            <div class="col-sm-12 col-md-6 col-lg-4 padding">
+                <div class="card mx-auto" style="width: 22rem;">
+                    <img src="{{ product.image }}" class="card-img-top mx-auto" alt="" style="width: 300px; height: 300px;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
+                        <h5 class="card-title">{{ product.name }}</h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="card-link"><i class="fa-solid fa-cart-plus fa-2xl"></i></a>
+                        <a href="/additem/{{ product.id }}" class="card-link"><i class="fa-solid fa-cart-plus fa-2xl"></i></a>
                         <a href="#" class="card-link"><i class="fa-solid fa-circle-info fa-2xl"></i></a>
-                        <h4 style="display: inline-block;float: right">$$$</h4>
+                        <h4 style="display: inline-block;float: right">$ {{ product.price}}</h4>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-12 col-md-3 col-lg-4">
-                <div class="card mx-auto">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="card-link"><i class="fa-solid fa-cart-plus fa-2xl"></i></a>
-                        <a href="#" class="card-link"><i class="fa-solid fa-circle-info fa-2xl"></i></a>
-                        <h4 style="display: inline-block;float: right">$$$</h4>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-4">
-                <div class="card mx-auto">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the
-                            card's content.</p>
-                    </div>
-                    <div class="card-body">
-                        <a href="#" class="card-link"><i class="fa-solid fa-cart-plus fa-2xl"></i></a>
-                        <a href="#" class="card-link"><i class="fa-solid fa-circle-info fa-2xl"></i></a>
-                        <h4 style="display: inline-block;float: right">$$$</h4>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </body>
