@@ -13,9 +13,11 @@
 
 <body>
     <!-- ***---------------------- NAVBAR -----------------------*** -->
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <nav class="navbar navbar-expand-md ">
         <div class="container-fluid padding">
-            <a class="navbar-brand" href="/store"><h2>ShopFun</h2></a>
+            <a class="navbar-brand" href="/store">
+                <h2>ShopFun</h2>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,9 +49,10 @@
         <div class="row padding">
             {% for product in data %}
             <div class="col-sm-12 col-md-6 col-lg-4">
-                <div class="card mx-auto padding shadow p-3 mb-5 bg-body-tertiary rounded" style="max-width: fit-content;">
+                <div class="card mx-auto padding shadow p-3 mb-5 bg-body-tertiary rounded"
+                    style="max-width: fit-content;">
                     <img src="{{ product.image }}" class="card-img-top mx-auto" alt=""
-                        style="max-width: fit-content; height: 400px;">
+                        style="max-width: fit-content; height: 300px;">
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                     </div>
@@ -57,8 +60,7 @@
                         <a href="/additem/{{ product.id }}" class="card-link update-cart"
                             data-product="{{ product.id }}" data-action="add"><i
                                 class="fa-solid fa-cart-plus fa-2xl"></i></a>
-                        <a href="#popup1" class="card-link"><i
-                                class="fa-solid fa-circle-info fa-2xl"></i></a>
+                        <a class="card-link" href="#popup{{ product.id }}"><i class="fa-solid fa-circle-info fa-2xl"></i></a>
                         <h4 style="display: inline-block;float: right">$ {{ product.price}}</h4>
                     </div>
                 </div>
@@ -66,15 +68,23 @@
             {% endfor %}
         </div>
         {% for product in data %}
-        <div id="popup1" class="overlay">
+        <div id="popup{{ product.id }}" class="overlay">
             <div class="popup">
-                <h2>{{ product.name }}</h2>
+                <div class="card mx-auto padding shadow p-3 mb-5 bg-body-tertiary rounded"
+                    style="max-width: fit-content;">
+                    <img src="{{ product.image }}" class="card-img-top mx-auto" alt=""
+                        style="max-width: 300px; height: 300px;">
+                </div>
+                <h2>{{ product.name }} | ${{ product.price}}</h2>
                 <a class="close" href="#">&times;</a>
                 <div class="content">
-                    {{ product.price}}
+                    <hr>
+                    <p><strong>Description:</strong></p>
+                    {{ product.description}}
+                    <hr>
                 </div>
             </div>
-        </div>  
+        </div>
         {% endfor %}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"

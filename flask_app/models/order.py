@@ -83,6 +83,6 @@ class Order:
 
     @classmethod
     def delete_order(cls, id):
-        query = "DELETE FROM orders WHERE id=%(id)s;"
-        data = {'id': id}
+        query = "DELETE FROM orders_items WHERE item_id = %(item_id)s;"
+        data = {'item_id': id}
         return connectToMySQL(DATABASE).query_db(query, data)

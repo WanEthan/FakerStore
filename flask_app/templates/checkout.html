@@ -13,7 +13,7 @@
 
 <body>
     <!-- ***---------------------- NAVBAR -----------------------*** -->
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <nav class="navbar navbar-expand-md">
         <div class="container-fluid padding">
             <a class="navbar-brand" href="/store"><h2>ShopFun</h2></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
@@ -104,7 +104,11 @@
                     {% for product in data.order_items %}
                     <div class="row padding">
                         <div class="col-lg-3 d-flex justify-content-center">
-                            <img src="{{ product.image }}" style="width: 30%;">
+                            <div class="card mx-auto padding shadow p-3 mb-5 bg-body-tertiary rounded"
+                            style="max-width: fit-content;">
+                            <img src="{{ product.image }}" class="card-img-top mx-auto"
+                                style="max-width: fit-content;">
+                        </div>
                         </div>
                         <div class="col-lg-3">{{ product.name }} </div>
                         <div class="col-lg-2">{{ product.price }}</div>

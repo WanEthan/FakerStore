@@ -54,6 +54,11 @@ def add_item(id, ):
     Order.order_add_items(data)
     return redirect('/store')
 
+@app.route("/deleteitem/<int:id>")
+def delete_item(id):
+    Order.delete_order(id)
+    return redirect('/cart')
+
 
 
 @app.route("/checkout")

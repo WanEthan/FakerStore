@@ -13,7 +13,7 @@
 
 <body>
     <!-- ***---------------------- NAVBAR -----------------------*** -->
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
+    <nav class="navbar navbar-expand-md">
         <div class="container-fluid padding">
             <a class="navbar-brand" href="/store"><h2>ShopFun</h2></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive">
@@ -80,8 +80,9 @@
                         <div class="col-lg-2">{{ product.price }}</div>
                         <div class="col-lg-2">
                             <i class="fa-solid fa-minus"></i>
-                            <p class="quanitity" style="display: inline-block;">{{ product.quanitity }}</p>
+                            <p class="quanitity" style="display: inline-block; border: 2px solid black; width: 25px; height: 25px; text-align: center;">{{ product.quanitity }}</p>
                             <i class="fa-solid fa-plus"></i>
+                            <a href="/deleteitem/{{ product.id }}" class="ms-3">remove</a>
                         </div>
                         <div class="col-lg-2">${{ product.get_total }}</div>
                     </div>
